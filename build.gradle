@@ -88,6 +88,11 @@ task buildEdge() {
 			into file("${buildDir}")
 			rename ("EdgeApp.jar", "openems-edge.jar")
 		}
+		copy {
+			from file("io.openems.edge.application/generated/distributions/executable/EdgeApp.jar")
+			into file("./tools/docker/openems-edge/build/")
+			rename ("EdgeApp.jar", "openems-edge.jar")
+		}
 	}
 }
 

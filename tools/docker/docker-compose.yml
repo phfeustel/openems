@@ -5,13 +5,25 @@ services:
     build: ./openems-backend
     volumes: 
       - ./openems-backend/config.d:/opt/openems-backend/config.d
+    network_mode: host
     ports:
       - 8076:8076
       - 8079:8079
       - 8081:8081
       - 8082:8082
   ui:
-    image: phfeustel/openmes-ui
+    image: phfeustel/openems-ui
     build: ./openems-ui
+    network_mode: host
     ports:
       - 80:80
+  edge:
+    image: phfeustel/openems-edge
+    build: ./openems-edge
+    volumes: 
+      - ./openems-edge/config.d:/opt/openems-edge/config.d
+    network_mode: host
+    ports:
+      - 8080:8080 
+      - 8084:8084
+      - 8085:8085

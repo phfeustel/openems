@@ -4,6 +4,9 @@ This directory contains example Dockerfiles
 Additionally, an example setup via docker compose can be started via `docker compose up`
 
 ## Pre-Requisites
+### OpenEMS Edge
+Execute the gradle edge build in the root directory via `./gradlew buildEdge`. The resulting fat jar is automatically copied in the right location.
+
 ### OpenEMS Backend
 Execute the gradle backend build in the root directory via `./gradlew buildBackend`. The resulting fat jar is automatically copied in the right location.
 
