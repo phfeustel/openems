@@ -1,0 +1,12 @@
+version: '3'
+services:
+  backend:
+    image: phfeustel/openems-backend
+    build: ./openems-backend
+    volumes: 
+      - ./openems-backend/config.d:/opt/openems-backend/config.d
+    ports:
+      - 8076:8076
+      - 8079:8079
+      - 8081:8081
+      - 8082:8082

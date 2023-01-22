@@ -1,9 +1,9 @@
-FROM adoptopenjdk/openjdk11:slim
+FROM adoptopenjdk/openjdk11:alpine-slim
 RUN mkdir -p /opt/openems-backend
 WORKDIR /opt/openems-backend
 COPY build/openems-backend.jar ./
 COPY openems-backend.sh ./
 RUN chmod 777 ./openems-backend.sh
 USER root
-EXPOSE 8075-8080
-ENTRYPOINT ["./openems-backend.sh"]
+EXPOSE 8075-8082
+CMD ["java", "-XX:+ExitOnOutOfMemoryError", "-Dfelix.cm.dir=/opt/openems-backend/config.d", "-Djava.util.concurrent.ForkJoinPool.common.parallelism=100", "-jar", "/opt/openems-backend/openems-backend.jar"]
