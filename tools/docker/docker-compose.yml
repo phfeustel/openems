@@ -27,3 +27,18 @@ services:
       - 8080:8080 
       - 8084:8084
       - 8085:8085
+  influxdb:
+    image: influxdb:2.0
+    ports:
+      - 8086:8086
+    network_mode: host
+    volumes:
+      - ./influxdb/data:/var/lib/influxdb2
+      - ./influxdb/config:/etc/influxdb2
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=openems
+      - DOCKER_INFLUXDB_INIT_PASSWORD=my-secret-password
+      - DOCKER_INFLUXDB_INIT_ORG=my-openems
+      - DOCKER_INFLUXDB_INIT_BUCKET=my-openems-bucket
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=0_GADRTQLD54aqK_6XvmZhQTbdLu7EFMbrK-M8XYuCmd_gSGLP5UHM7BbcZbiQIcyb5DWB0Q6oYOAKX9YcCDjg==
