@@ -1,0 +1,20 @@
+[default]
+  url = "http://localhost:8086"
+  token = "0_GADRTQLD54aqK_6XvmZhQTbdLu7EFMbrK-M8XYuCmd_gSGLP5UHM7BbcZbiQIcyb5DWB0Q6oYOAKX9YcCDjg=="
+  org = "my-openems"
+  active = true
+# 
+# [eu-central]
+#   url = "https://eu-central-1-1.aws.cloud2.influxdata.com"
+#   token = "XXX"
+#   org = ""
+# 
+# [us-central]
+#   url = "https://us-central1-1.gcp.cloud2.influxdata.com"
+#   token = "XXX"
+#   org = ""
+# 
+# [us-west]
+#   url = "https://us-west-2-1.aws.cloud2.influxdata.com"
+#   token = "XXX"
+#   org = ""
